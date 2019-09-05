@@ -13,9 +13,9 @@ final class MacroBlockVariable extends AbstractMacroVariable implements IMacro
 		 * Remove lines with inline variables definition and put then into DocuScope
 		 */
 		$content = preg_replace_callback(
-			'/^\$\$([a-zA-Z_0-9]+)\n(.+?)\$\$$/ms',
+			'/\$\$(.+?)\n(.+?)\$\$/ms',
 			function(array $input): string {
-				$this->docuScope->addBlockVariable($input[1], $input[2]);
+				$this->docuScope->addBlockVariable(trim($input[1]), $input[2]);
 
 				return '';
 			},

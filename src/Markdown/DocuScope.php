@@ -87,6 +87,7 @@ final class DocuScope
 	 */
 	public function getBlockVariable(string $varName): string
 	{
+		$varName = trim($varName);
 		if (!isset($this->blockVariables[$varName])) {
 			throw new DocuGeneratorException(
 				"Undefined block variable [\$$varName]"

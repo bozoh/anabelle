@@ -275,7 +275,7 @@ ul {
 }
 
 main h2:first-of-type::before {
-	content: "Section: ";
+	content: "➤ ";
 	font-weight: normal;
 	color: #949aa0;
 }
